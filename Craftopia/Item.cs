@@ -32,5 +32,17 @@ namespace Craftopia
 			get { return (int)mThis["count"]; }
 			set { mThis["count"] = value; }
 		}
+
+		public int DurabilityValue
+		{
+			get { return (int)mThis["item"]["durabilityValue"]; }
+			set { mThis["item"]["durabilityValue"] = value; }
+		}
+
+		public int DurabilityMax
+		{
+			get { return (int)mThis["item"]["durabilityMax"]; }
+			set { mThis["item"]["durabilityMax"] = value; }
+		}
 	}
 }
