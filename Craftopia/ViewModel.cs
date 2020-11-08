@@ -34,7 +34,8 @@ namespace Craftopia
 			
 			foreach (var key in dic.Keys)
 			{
-				JArray arr = (JArray)character["inventorySaveData"][key];
+				JArray arr = character["inventorySaveData"][key] as JArray;
+				if (arr == null) continue;
 				foreach (var obj in arr)
 				{
 					dic[key].Add(new ItemInBox((JObject)obj));
