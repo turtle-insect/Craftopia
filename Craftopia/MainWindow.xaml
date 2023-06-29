@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Craftopia"
         mc:Ignorable="d"
+		WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+	<Window.DataContext>
+		<local:ViewModel/>
+	</Window.DataContext>
+	<DockPanel>
+		<Menu DockPanel.Dock="Top">
+			<MenuItem Header="File">
+				<MenuItem Header="Open" Command="{Binding FileOpenCommand}"/>
+				<MenuItem Header="Save" Command="{Binding FileSaveCommand}"/>
+			</MenuItem>
+		</Menu>
+		<TabControl>
+			<TabItem Header="Player">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition Height="6*"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition Width="5"/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Label Content="Level"/>
+					<TextBox Grid.Column="1" Text="{Binding Player.Status.Level, UpdateSourceTrigger=PropertyChanged}"/>
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</DockPanel>
 </Window>
