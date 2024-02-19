@@ -1,3 +1,5 @@
+![DL Count](https://img.shields.io/github/downloads/turtle-insect/Craftopia/total.svg)
+
 # Craftopia
 Steam Craftopia SaveDate Editor
 
